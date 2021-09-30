@@ -1,5 +1,7 @@
 #include<iostream>
 #include<conio.h>
+#include<math.h>
+#include<sstream>
 using namespace std;
 int main()
 {
@@ -39,7 +41,26 @@ int main()
 		default: cout << "Нет такого дня"; break;
 		}
 		break;
+
+	case'3':
+		cout << "Введите два целых числа n и k: ";
+		int n, k, i = 0;
+		stringstream dd;
+		cin >> n >> k;
+		dd << n;
+		while (i != k)
+		{
+			cout << dd.str()[i];
+			i++;
+		}
+		break;
 	}
+
+	 
+		
+
+
+
 
 
 
