@@ -99,5 +99,8 @@ int main()
     int* arr = createArr(size);
     int pos = positionElementArray(size, arr);
     cout << "PositionElementArray: " << pos << endl;
+    cout << "=======Task 2=======" << endl;
+    findNumber(size, arr);
+    cout << endl;
     delete[]arr;
 }
