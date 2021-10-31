@@ -118,6 +118,28 @@ int main()
     cout << "\nThe maximum length of repeated numbers: ";
     findlength(length, size1, k, max);
     cout << endl;
+    cout << "=======Task 4=======" << endl;
+    int n, m;
+    cout << "Size Matrix: ";
+    cin >> n >> m;
+    int** source = allocMatrix(n, m);
+    int** transposed = allocMatrix(m, n);
+    for (size_t i = 0; i < n; ++i) {
+        for (size_t j = 0; j < m; ++j) {
+            source[i][j] = i * n + j; //
+        }
+    }
+    cout << "source matrix: " << endl << endl;
+    print(source, n, m);
+    cout << endl;
+    for (size_t i = 0; i < n; i++)
+        for (size_t j = 0; j < m; j++)
+            transposed[j][i] = source[i][j];
+    cout << "transposed matrix: " << endl << endl;
+    print(transposed, m, n);
+    cout << endl;
+    freeMatrix(source, n, m);
+    freeMatrix(transposed, m, n);
     delete[] length;
     delete[]arr;
 }
