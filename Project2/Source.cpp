@@ -102,5 +102,22 @@ int main()
     cout << "=======Task 2=======" << endl;
     findNumber(size, arr);
     cout << endl;
+    cout << "=======Task 3=======" << endl;
+    srand(time(0));
+    int size1, i, k = 1, max = 0;
+    int A = -9;
+    int B = 9;
+    cout << "Enter size: ";
+    cin >> size1;
+    int* length = new int[size1];
+    for (int i = 0; i < size1; i++)
+    {
+        length[i] = A + rand() % ((B + 1) - A);
+        cout << setw(2) << length[i] << " ";
+    }
+    cout << "\nThe maximum length of repeated numbers: ";
+    findlength(length, size1, k, max);
+    cout << endl;
+    delete[] length;
     delete[]arr;
 }
