@@ -142,4 +142,8 @@ int main()
     freeMatrix(transposed, m, n);
     delete[] length;
     delete[]arr;
+    _getch();
+    system("pause");
+    return 0;
+
 }

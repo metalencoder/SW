@@ -94,39 +94,36 @@ int main()
 		ran4 = rand() % 10;
 		cout << "Сгенерирован код: " << ran1 << ran2 << ran3 << ran4;
 		cout << endl;
-		for (int i = 0; i < 9; i++)
+		for (int i = 0; i < 10; i++)
 		{
-			if (i == ran4)
 
+			for (int j = 0; j < 10; j++)
 			{
-				for (int j = 0; j < 9; j++)
+
+
+				for (int k = 0; k < 10; k++)
 				{
-					if (j == ran3)
+					for (int v = 0; v < 10; v++)
 					{
-						for (int k = 0; k < 9; k++)
-							if (k == ran2)
-							{
-								{
-									for (int v = 0; v < 9; v++)
-										if (v == ran1)
-										{
-											{
-
-												cout << "Код найден " << v << k << j << i;
-
-											}
-										}
-								}
-
-							}
+						if (ran4 == i && ran3 == j && ran2 == k && ran1 == v)
+						{
+							cout << "Код найден " << v << k << j << i<<endl;
+							system("pause");
+							
+						}
+						else
+						{
+					
+							cout << "Код не найден" << endl;
+						}
+						
 					}
 				}
 			}
-
 		}
-	}
-	break;
+		break;
 	default:cout << "ошибка ввода" << endl;
 	}
 	return 0;
+	}
 }
