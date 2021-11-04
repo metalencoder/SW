@@ -7,13 +7,13 @@ using namespace std;
 int* createArr(int size)
 {
     cout << "Enter random number generation range: ";
-    int A, B;
-    cin >> A >> B;
+    int max, min;
+    cin >> max >> min;
     cout << endl;
     int* arr = new int[size];
     for (int i = 0; i < size; i++)
     {
-        arr[i] = rand() % (B - A) - A;
+        arr[i] = min + rand() % (max - min + 1);
     }
     for (int i = 0; i < size; i++)
     {
@@ -34,10 +34,11 @@ int positionElementArray(int size, int* mass)
         if (element == mass[i])
         {
             position = i;
-            break;
+            return position;
         }
     }
-    return position;
+    return 0;
+    
 }
 void findNumber(int size, int* mass)
 {
@@ -50,7 +51,7 @@ void findNumber(int size, int* mass)
 
     }
 }
-void findlength(int length[], int size1, int k = 1, int max = 0)
+int findlength(int length[], int size1, int k = 1, int max = 0)
 {
     for (int i = 0; i < size1 - 1; i++)
     {
@@ -65,7 +66,7 @@ void findlength(int length[], int size1, int k = 1, int max = 0)
         if (k > max)
             max = k;
     }
-    cout << max << endl;
+    return max;
 }
 void print(int** array, size_t n, size_t m) {
     for (size_t i = 0; i < n; i++) {
@@ -116,7 +117,7 @@ int main()
         cout << setw(2) << length[i] << " ";
     }
     cout << "\nThe maximum length of repeated numbers: ";
-    findlength(length, size1, k, max);
+    cout<<findlength(length, size1, k, max);
     cout << endl;
     cout << "=======Task 4=======" << endl;
     int n, m;
